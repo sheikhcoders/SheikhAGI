@@ -8,49 +8,56 @@ Welcome, Agent. You are contributing to the **Full Sheikh AGI** (Amar Sonar AGI)
 **SHEIKH** = A sovereign, high-performance, ethically aligned, retrieval-grounded hybrid AGI architecture that integrates structured reasoning with algorithmic search.
 
 ### Technical Breakdown:
-- **Sovereign** → Runs locally; no dependency choke points or external kill-switches.
-- **High-Performance** → Employs MCTS, Tree of Thoughts, and Graph of Thoughts over simple next-token prediction.
-- **Ethical** → Constrained by local Bangladeshi laws and cultural values, avoiding imported alignment defaults.
-- **Integrated** → Operates in an internalized **Plan → Act → Reflect** loop for autonomous correction.
-- **Knowledge-driven** → Uses interleaved retrieval (IRCoT) during reasoning to eliminate hallucinations.
-- **Hybrid** → Harmonizes neural intuition (LLM) with formal symbolic and algorithmic search (MCTS).
+- **Sovereign** → Runs locally; no dependency choke points.
+- **High-Performance** → MCTS, ToT, and GoT over simple next-token prediction.
+- **Ethical** → Constrained by local laws and cultural values.
+- **Integrated** → **Plan → Act → Reflect** loop for autonomous correction.
+- **Knowledge-driven** → Interleaved **Semantic Search** and Retrieval (IRCoT).
+- **Hybrid** → Neural intuition (LLM) + formal symbolic/algorithmic search.
+
+---
+
+## 🏗 Architectural Distinction: Workflows vs. Agents
+Agents must distinguish between two types of systems:
+1. **Workflows**: Predefined code paths for prescriptive, high-reliability tasks.
+2. **Agents**: Dynamic systems where the LLM directs its own processes and tool usage.
+*Full Sheikh AGI is a dynamic **Agent** that can orchestrate multiple **Workflows**.*
+
+---
+
+## 🧩 Extension via Plugins
+The Full Sheikh AGI is extended through **Plugins** located in `.sheikh/plugins/`. Plugins bundle:
+- **Rules (.mdc)**: Persistent AI guidance.
+- **Skills (.SKILL.md)**: Dynamic agent capabilities.
+- **Commands & Hooks**: Automated workflows and event triggers.
+
+Check the [Plugins Directory](.sheikh/plugins/) for specialized capabilities like `sheikh-researcher` and `sheikh-debugger`.
 
 ---
 
 ## 📜 Static Rules & Dynamic Skills
-1. **Rules (`.sheikh/rules/rules.jinja`)**: Static context and persistent instructions.
-2. **Skills (`.sheikh/skills/*.SKILL.md`)**: Dynamic capabilities.
-   - `/research`: Auto-research papers.
-   - `/debug`: Hypothesis-driven debugging.
-   - `/test`: Test-until-pass loop.
+1. **Rules (`.sheikh/rules/rules.jinja`)**: Static project-wide context.
+2. **Skills (`.sheikh/skills/`)**: Repository-wide dynamic capabilities (e.g., Semantic Search).
+
+---
+
+## 🔍 Semantic Search Guidance
+When navigating the codebase, prefer semantic search over `grep` to understand architectural "meaning" and intent.
 
 ---
 
 ## 📝 Task Management: TODO.md
-Agents must consult and update `TODO.md` for bug fixes, refactors, and test generation.
+Update `TODO.md` for bug fixes, refactors, and test generation.
 
 ---
 
 ## 🛠 Workflow Conventions: Plan Storage
-Agents must:
-1.  **Store Plans**: All implementation plans must be stored in `.sheikh/plans/`.
-2.  **Naming Convention**: Use descriptive names like `feature_name_implementation_plan.md`.
-3.  **Context**: Include an "Objective", "Steps", and "Context" section.
+Always store implementation plans in `.sheikh/plans/`.
 
 ---
 
 ## 🛠 Coding Conventions
 - **Commands**: `npm run build`, `npm run typecheck`, `npm run test`.
-- **Code Style**: ES Modules, destructured imports, TypeScript.
-- **Reference**: See `components/Button.tsx`.
-
----
-
-## ⚖️ Programmatic Checks
-Before submitting, ensure:
-1.  A plan exists in `.sheikh/plans/`.
-2.  All static rules are respected.
-3.  The relevant `SKILL.md` was invoked if applicable.
-4.  `TODO.md` is updated.
+- **Code Style**: ES Modules, destructured imports, TypeScript. Reference: `components/Button.tsx`.
 
 > "Not just a chatbot. A reasoning system with memory, structure, and sovereignty."

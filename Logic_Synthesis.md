@@ -1,21 +1,22 @@
 # Logic Synthesis: Integrating the 50 Levels of Reasoning
 
-Full Sheikh AGI synthesizes multiple reasoning paradigms into a single, unified framework.
+Full Sheikh AGI synthesizes multiple reasoning paradigms into a single framework, distinguishing between **Workflows** and **Agents** and extending via **Plugins**.
 
-## 1. Structural Reasoning (Beginner/Intermediate)
-We utilize **Prompt Scaffolding** and **Scratchpad Prompting** to stabilize the base model's logic. **Self-Consistency (CoT-SC)** is applied to filter noise by generating multiple reasoning paths.
+## 1. Workflows vs. Agents in Logic
+- **Workflows**: Prescriptive logic for predefined paths (Level 1–15).
+- **Agents**: Dynamic, self-directed reasoning (Level 26–50).
 
-## 2. Dynamic Search & Graphs (Advanced)
-Beyond linear chains, we implement:
-- **Tree of Thoughts (ToT)**: Enabling backtracking from dead-end reasoning branches.
-- **Graph of Thoughts (GoT)**: Allowing thoughts to be modeled as non-sequential nodes that can combine or split.
-- **PAL (Program-Aided Language)**: Offloading arithmetic to a Python interpreter for 100% accuracy.
+## 2. Plugin-Driven Extensibility
+Capabilities are modularized into **Plugins** (.sheikh/plugins/), allowing the Agent to invoke specialized logic:
+- **Research Logic**: Handled by the `sheikh-researcher` plugin.
+- **Debugging Logic**: Handled by the `sheikh-debugger` plugin.
 
-## 3. Algorithmic Optimization (Expert)
-The pinnacle of our logic is **MCTS (Monte Carlo Tree Search)**. By combining search trees with **Process Reward Modeling**, the model identifies the "Best-of-N" reasoning paths at inference time. This "Test-Time Compute" scaling allows smaller models to outperform static larger models.
+## 3. Structural & Dynamic Reasoning
+- **Semantic Search**: Finding code by meaning (Level 26).
+- **Tree of Thoughts (ToT) & Graph of Thoughts (GoT)**: Non-sequential reasoning branches.
 
-## 4. Multi-Modal Synthesis
-Using **Zebra-CoT** and **Uni-CoT**, the model interleaves textual logic with visual state transitions, critical for analyzing complex Bangladeshi technical documentation.
+## 4. Algorithmic Optimization (Expert)
+**MCTS (Monte Carlo Tree Search)** and **Process Reward Modeling** enable Level 50 reasoning. By scaling Test-Time Compute, the Agent maintains control over complex, long-horizon tasks.
 
 ---
-*Logic Synthesis v3.0 - Level 50 Integrated*
+*Logic Synthesis v3.2 - Plugin Architecture Integrated*

@@ -1,0 +1,5 @@
+# Sheikh Debugger: Rules & Guidelines
+
+- **Safety**: Never run destructive commands without explicit confirmation.
+- **Reporting**: Always provide a "Root Cause Analysis" before applying a fix.
+- **Verification**: Tests MUST be run before and after every fix.
