@@ -1,56 +1,36 @@
-# Implementation Roadmap: Building the Super Power AGI
+# Implementation Roadmap: Building Amar Sonar AGI
 
-This roadmap provides a step-by-step guide to developing, training, and deploying the **Amar Sonar AGI** model.
+This roadmap follows a tiered progression through the 50 levels of reasoning.
 
-## Phase 1: Data Curation & Cold-Start SFT
-*Goal: Teach the model how to 'think' and format its thoughts.*
+## Phase 1: Foundation (Levels 1–10)
+*Goal: Establish basic reasoning traces.*
+- **Step 1**: Curation of 50k high-quality CoT examples.
+- **Step 2**: **Cold-Start SFT** using Scratchpad and Role-Based prompting.
+- **Step 3**: Baseline evaluation on GSM8K and HumanEval.
 
-1.  **Dataset Creation**:
-    - Scrape **arXiv** for math/physics problems.
-    - Extract competitive programming problems from **Codeforces** and **LeetCode**.
-    - Augment with **Long-CoT** reasoning traces (e.g., using DeepSeek-R1-Distill-Llama-70B).
-2.  **SFT Training**:
-    - Fine-tune a base model (e.g., Qwen-2.5-7B or Llama-3.1-8B).
-    - Use a sequence length of at least 32k tokens.
+## Phase 2: Verification (Levels 11–25)
+*Goal: Implement self-correction and external tools.*
+- **Step 4**: Integrate **PAL (Program-Aided Language)** for math stability.
+- **Step 5**: Training for **Reflexion** and **Self-Consistency**.
+- **Step 6**: Development of the **Self-Critique** reward signal.
 
-## Phase 2: Reasoning-Oriented RL (GRPO)
-*Goal: Enable self-evolution and error correction.*
+## Phase 3: Advanced Search (Levels 26–40)
+*Goal: Non-linear reasoning and retrieval.*
+- **Step 7**: Implementation of **Tree of Thoughts (ToT)** and **Graph of Thoughts (GoT)**.
+- **Step 8**: Fine-tuning for **IRCoT** to interleave retrieval.
+- **Step 9**: Integration of **Zebra-CoT** for multimodal (text/image) reasoning.
 
-1.  **Environment Setup**:
-    - Deploy a **Python Sandbox** for code execution feedback.
-    - Set up a **LaTeX Verifier** for mathematical answers.
-2.  **GRPO Loop**:
-    - Train the model using the **Group Relative Policy Optimization** algorithm.
-    - **Reward Function**: Correctness (Accuracy) + Formatting (Thought consistency).
-    - Iteratively increase task difficulty.
-
-## Phase 3: Distillation & Optimization
-*Goal: Create a lightweight, high-performance model.*
-
-1.  **Trace Collection**:
-    - Generate 1M+ high-quality reasoning traces from the RL-trained model.
-2.  **Distillation**:
-    - Use the traces to fine-tune a smaller model (e.g., 1.5B or 3B parameters).
-3.  **Quantization**:
-    - Apply **GGUF** or **EXL2** quantization for local deployment on consumer GPUs.
-
-## Phase 4: Deployment to Hugging Face Hub
-*Goal: Share the sovereign intelligence with the world.*
-
-1.  **Weight Extraction**:
-    - Use `transformers` library to save final model weights.
-2.  **Hub Upload**:
-    - Create a repository on [Hugging Face](https://huggingface.co/).
-    - Upload `config.json`, `tokenizer.json`, and safe-tensors.
-3.  **Model Card**:
-    - Write a comprehensive README with benchmarks (GSM8K, MATH, HumanEval).
+## Phase 4: Expert Optimization (Levels 41–50)
+*Goal: Test-time compute scaling and autonomous agents.*
+- **Step 10**: Train **Process Reward Models (PRM)** to score individual steps.
+- **Step 11**: Deploy **MCTS (Monte Carlo Tree Search)** for inference-time search.
+- **Step 12**: Final distillation into efficient 7B/14B models for sovereign deployment.
 
 ---
 
-### Progress Tracker
-- [x] Research Synthesis
-- [ ] Base Model Selection
-- [ ] Stage 1: SFT Data
-- [ ] Stage 2: GRPO Training
-- [ ] Stage 3: Distillation
-- [ ] Final Deployment
+### Implementation Milestones
+- [x] Research & Taxonomy Creation
+- [ ] Phase 1: Foundation
+- [ ] Phase 2: Verification
+- [ ] Phase 3: Advanced Search
+- [ ] Phase 4: Expert Optimization
