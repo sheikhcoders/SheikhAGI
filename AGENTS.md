@@ -1,67 +1,43 @@
 # 🤖 AGENTS.md: Guidance for Full Sheikh AGI Architects
 
-Welcome, Agent. You are contributing to the **Full Sheikh AGI** (Amar Sonar AGI) initiative—a sovereign intelligence project for Bangladesh. This file provides instructions, conventions, and context to ensure our work is consistent and high-impact.
+Welcome, Agent. You are contributing to the **Full Sheikh AGI** (Amar Sonar AGI) initiative. This file provides instructions, conventions, and context to ensure our work is consistent and high-impact.
 
 ---
 
 ## 🏛 Core Philosophy: The "SHEIKH" Framework
 All work on this codebase must align with the SHEIKH principles:
-- **S**overeign: Locally deployable and independent.
-- **H**igh-Performance: Targeting Level 50 reasoning (MCTS/GoT).
-- **E**thical: Grounded in local cultural and legal frameworks.
-- **I**ntegrated: Interleaved Thinking (Plan-Act-Reflect) as a core loop.
-- **K**nowledge-driven: Interleaved Retrieval (IRCoT) to minimize hallucinations.
-- **H**ybrid: Combining LLM intuition with formal algorithmic search.
+- **S**overeign | **H**igh-Performance | **E**thical | **I**ntegrated | **K**nowledge-driven | **H**ybrid.
 
 ---
 
-## 🛠 Workflow Conventions: Plan Storage
-To ensure team continuity and easy resumption of work, agents must:
-1.  **Store Plans**: All implementation plans must be stored in `.sheikh/plans/` as Markdown files.
-2.  **Naming Convention**: Use descriptive names like `feature_name_implementation_plan.md`.
-3.  **Context**: Include an "Objective", "Steps", and "Context" section in every plan.
-4.  **Updates**: Update these plans if the approach changes significantly during the task.
+## 📜 Static Rules & Dynamic Skills
+1. **Rules (`.sheikh/rules/rules.jinja`)**: Static context and persistent instructions.
+2. **Skills (`.sheikh/skills/*.SKILL.md`)**: Dynamic capabilities.
+   - `/research`: Auto-research papers.
+   - `/debug`: Hypothesis-driven debugging.
+   - `/test`: Test-until-pass loop.
 
 ---
 
-## 🛠 Coding & Documentation Conventions
-
-### 1. Documentation (Markdown)
-- Use **LaTeX** for all mathematical expressions.
-- Maintain a clear **Header Hierarchy**.
-- Include **Table of Contents** for files longer than 50 lines.
-- Use **Tables** for comparative data.
-- Embed **Mermaid or Placeholder Images** for architectural flows.
-
-### 2. Implementation (Python)
-- Use **Type Hints** for all function signatures.
-- Prefer **BFloat16** for model weights to ensure efficiency.
-- Follow the **Plan -> Act -> Reflect** pattern in agentic logic.
+## 📝 Task Management: TODO.md
+Agents must consult and update `TODO.md` for bug fixes, refactors, and test generation.
 
 ---
 
-## 📂 Project Structure
-- `AGI_Bangladesh_Blueprint.md`: High-level master architecture.
-- `Logic_Synthesis.md`: Technical deep-dive into reasoning logics.
-- `Reasoning_Taxonomy.md`: The 50-level hierarchy of AI intelligence.
-- `Implementation_Roadmap.md`: Step-by-step training and deployment guide.
-- `.sheikh/plans/`: Repository for implementation plans and task context.
-- `/home/jules/self_created_tools/`: Custom utilities for research (e.g., `paper_fetcher.py`).
-
----
-
-## 🚀 Performance Metrics
-Agents should aim to:
-1.  Increase **Test-Time Compute efficiency**.
-2.  Achieve a **37% reduction** in response length through Interleaved Reasoning.
-3.  Ensure 100% accuracy in arithmetic via **PAL (Program-Aided Language)**.
+## 🛠 Coding Conventions
+- **Commands**: `npm run build`, `npm run typecheck`, `npm run test`.
+- **Code Style**: ES Modules, destructured imports, TypeScript.
+- **Reference**: See `components/Button.tsx`.
+- **API**: Follow patterns in `app/api/`.
 
 ---
 
 ## ⚖️ Programmatic Checks
 Before submitting, ensure:
-1.  A plan exists in `.sheikh/plans/` for the current task.
-2.  All LaTeX formulae are correctly escaped and rendered.
-3.  Markdown links are valid and relative.
+1.  A plan exists in `.sheikh/plans/`.
+2.  All static rules are respected.
+3.  The relevant `SKILL.md` was invoked if applicable.
+4.  `TODO.md` is updated.
+5.  Run `npm run typecheck`.
 
 > "To build the Full Sheikh AGI is to build the future of our nation's digital sovereignty."
