@@ -15,6 +15,15 @@ All work on this codebase must align with the SHEIKH principles:
 
 ---
 
+## 🛠 Workflow Conventions: Plan Storage
+To ensure team continuity and easy resumption of work, agents must:
+1.  **Store Plans**: All implementation plans must be stored in `.sheikh/plans/` as Markdown files.
+2.  **Naming Convention**: Use descriptive names like `feature_name_implementation_plan.md`.
+3.  **Context**: Include an "Objective", "Steps", and "Context" section in every plan.
+4.  **Updates**: Update these plans if the approach changes significantly during the task.
+
+---
+
 ## 🛠 Coding & Documentation Conventions
 
 ### 1. Documentation (Markdown)
@@ -36,6 +45,7 @@ All work on this codebase must align with the SHEIKH principles:
 - `Logic_Synthesis.md`: Technical deep-dive into reasoning logics.
 - `Reasoning_Taxonomy.md`: The 50-level hierarchy of AI intelligence.
 - `Implementation_Roadmap.md`: Step-by-step training and deployment guide.
+- `.sheikh/plans/`: Repository for implementation plans and task context.
 - `/home/jules/self_created_tools/`: Custom utilities for research (e.g., `paper_fetcher.py`).
 
 ---
@@ -50,8 +60,8 @@ Agents should aim to:
 
 ## ⚖️ Programmatic Checks
 Before submitting, ensure:
-1.  All LaTeX formulae are correctly escaped and rendered.
-2.  Markdown links are valid and relative.
-3.  The 50-level taxonomy is referenced where applicable.
+1.  A plan exists in `.sheikh/plans/` for the current task.
+2.  All LaTeX formulae are correctly escaped and rendered.
+3.  Markdown links are valid and relative.
 
 > "To build the Full Sheikh AGI is to build the future of our nation's digital sovereignty."

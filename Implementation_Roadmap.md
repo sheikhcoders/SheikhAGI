@@ -34,3 +34,11 @@ This roadmap follows a tiered progression through the 50 levels of reasoning.
 - [ ] Phase 2: Verification
 - [ ] Phase 3: Advanced Search
 - [ ] Phase 4: Expert Optimization
+
+---
+
+## Standard Operating Procedures (SOP)
+To maintain the high standards of the **Full Sheikh AGI** project, all developers and agents must adhere to the following:
+- **Plan First**: Before any major code change, an implementation plan must be drafted and stored in `.sheikh/plans/`.
+- **Review & Reflect**: Use the stored plans to reflect on progress and adjust the roadmap dynamically.
+- **Traceability**: Every major milestone should have a corresponding plan that documents the "Why" and "How" of the architectural decisions.
