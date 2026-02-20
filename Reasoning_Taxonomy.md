@@ -1,6 +1,6 @@
-# Reasoning Taxonomy: 50 Levels of Intelligence
+# Full Sheikh AGI: 50-Level Reasoning Taxonomy
 
-This document provides a comprehensive taxonomy of reasoning techniques used in the development of **Amar Sonar AGI**, categorized from basic prompting to expert model optimization.
+This document provides a comprehensive taxonomy of reasoning techniques used in the development of **Full Sheikh AGI**, categorized from basic prompting to expert model optimization.
 
 ---
 
@@ -71,4 +71,4 @@ This document provides a comprehensive taxonomy of reasoning techniques used in 
 50. **Hybrid Search Reasoning**: Combining LLM "intuition" with formal search (MCTS).
 
 ---
-*Reference Guide for Amar Sonar AGI Development*
+*Reference Guide for Full Sheikh AGI Development*

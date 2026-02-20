@@ -1,6 +1,6 @@
 # Logic Synthesis: Integrating the 50 Levels of Reasoning
 
-Amar Sonar AGI synthesizes multiple reasoning paradigms into a single, unified framework.
+Full Sheikh AGI synthesizes multiple reasoning paradigms into a single, unified framework.
 
 ## 1. Structural Reasoning (Beginner/Intermediate)
 We utilize **Prompt Scaffolding** and **Scratchpad Prompting** to stabilize the base model's logic. **Self-Consistency (CoT-SC)** is applied to filter noise by generating multiple reasoning paths.

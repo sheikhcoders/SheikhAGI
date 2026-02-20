@@ -1,6 +1,6 @@
 # Formatting Guidelines Synthesis
 
-This document summarizes the best practices and Markdown features used in the **Amar Sonar AGI** documentation suite.
+This document summarizes the best practices and Markdown features used in the **Full Sheikh AGI** documentation suite.
 
 ## 1. Markdown Feature Checklist
 
@@ -23,7 +23,7 @@ This document summarizes the best practices and Markdown features used in the **
 5.  **Interactive Elements**: Use HTML embeds (like YouTube) for multi-modal learning.
 
 ## 3. Bangladesh AGI Specific Style
-- **Cultural Nuance**: Use local naming conventions (e.g., "Amar Sonar AGI") to foster sovereign pride.
+- **Cultural Nuance**: Use local naming conventions (e.g., "Full Sheikh AGI") to foster sovereign pride.
 - **Accessibility**: Focus on efficiency and low-resource deployment guidelines.
 
 ---

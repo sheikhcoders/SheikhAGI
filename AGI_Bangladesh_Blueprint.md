@@ -1,4 +1,4 @@
-# 🇧🇩 Amar Sonar AGI: A Blueprint for Sovereign Super-Intelligence
+# 🇧🇩 Full Sheikh AGI (Amar Sonar AGI): Sovereign Super-Intelligence Blueprint
 
 > "The synthesis of local context and global breakthroughs defines the future of intelligence."
 > — *Bangladesh AGI Initiative*
@@ -17,7 +17,7 @@
 ---
 
 ## 1. Executive Summary
-**Amar Sonar AGI** is a high-performance reasoning framework. It leverages a tiered approach to intelligence, scaling from basic Chain-of-Thought to expert-level **Monte Carlo Tree Search (MCTS)**. By integrating the full spectrum of 50 reasoning levels, we achieve a model capable of autonomous self-correction and multi-modal synthesis.
+**Full Sheikh AGI** is a high-performance reasoning framework. It leverages a tiered approach to intelligence, scaling from basic Chain-of-Thought to expert-level **Monte Carlo Tree Search (MCTS)**. By integrating the full spectrum of 50 reasoning levels, we achieve a model capable of autonomous self-correction and multi-modal synthesis.
 
 ---
 
@@ -32,7 +32,7 @@ Using **Process Reward Modeling** (Level 42), we train a critic to score every i
 ---
 
 ## 3. The Reasoning Taxonomy (Levels 1–50)
-The intelligence of Amar Sonar AGI is structured across four maturity phases:
+The intelligence of Full Sheikh AGI is structured across four maturity phases:
 - **Beginner (1–10)**: Basic CoT, Role-Based Persona, and Scratchpads.
 - **Intermediate (11–25)**: **Self-Consistency**, **Reflexion**, and **Program-Aided Language (PAL)**.
 - **Advanced (26–40)**: **Tree of Thoughts (ToT)**, **Graph of Thoughts (GoT)**, and **IRCoT**.
@@ -55,7 +55,7 @@ from transformers import AutoModelForCausalLM
 
 def initialize_reasoning_model(base_model_path):
     """
-    Initializes Amar Sonar AGI with level 50 Hybrid Search capabilities.
+    Initializes Full Sheikh AGI with level 50 Hybrid Search capabilities.
     """
     model = AutoModelForCausalLM.from_pretrained(base_model_path)
     # Enable Graph of Thoughts (GoT) and MCTS scaling

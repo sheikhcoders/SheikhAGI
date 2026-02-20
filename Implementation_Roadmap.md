@@ -1,4 +1,4 @@
-# Implementation Roadmap: Building Amar Sonar AGI
+# Implementation Roadmap: Building Full Sheikh AGI
 
 This roadmap follows a tiered progression through the 50 levels of reasoning.
 
