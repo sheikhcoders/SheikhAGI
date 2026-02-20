@@ -5,8 +5,15 @@ Welcome, Agent. You are contributing to the **Full Sheikh AGI** (Amar Sonar AGI)
 ---
 
 ## 🏛 Core Philosophy: The "SHEIKH" Framework
-All work on this codebase must align with the SHEIKH principles:
-- **S**overeign | **H**igh-Performance | **E**thical | **I**ntegrated | **K**nowledge-driven | **H**ybrid.
+**SHEIKH** = A sovereign, high-performance, ethically aligned, retrieval-grounded hybrid AGI architecture that integrates structured reasoning with algorithmic search.
+
+### Technical Breakdown:
+- **Sovereign** → Runs locally; no dependency choke points or external kill-switches.
+- **High-Performance** → Employs MCTS, Tree of Thoughts, and Graph of Thoughts over simple next-token prediction.
+- **Ethical** → Constrained by local Bangladeshi laws and cultural values, avoiding imported alignment defaults.
+- **Integrated** → Operates in an internalized **Plan → Act → Reflect** loop for autonomous correction.
+- **Knowledge-driven** → Uses interleaved retrieval (IRCoT) during reasoning to eliminate hallucinations.
+- **Hybrid** → Harmonizes neural intuition (LLM) with formal symbolic and algorithmic search (MCTS).
 
 ---
 
@@ -24,11 +31,18 @@ Agents must consult and update `TODO.md` for bug fixes, refactors, and test gene
 
 ---
 
+## 🛠 Workflow Conventions: Plan Storage
+Agents must:
+1.  **Store Plans**: All implementation plans must be stored in `.sheikh/plans/`.
+2.  **Naming Convention**: Use descriptive names like `feature_name_implementation_plan.md`.
+3.  **Context**: Include an "Objective", "Steps", and "Context" section.
+
+---
+
 ## 🛠 Coding Conventions
 - **Commands**: `npm run build`, `npm run typecheck`, `npm run test`.
 - **Code Style**: ES Modules, destructured imports, TypeScript.
 - **Reference**: See `components/Button.tsx`.
-- **API**: Follow patterns in `app/api/`.
 
 ---
 
@@ -38,6 +52,5 @@ Before submitting, ensure:
 2.  All static rules are respected.
 3.  The relevant `SKILL.md` was invoked if applicable.
 4.  `TODO.md` is updated.
-5.  Run `npm run typecheck`.
 
-> "To build the Full Sheikh AGI is to build the future of our nation's digital sovereignty."
+> "Not just a chatbot. A reasoning system with memory, structure, and sovereignty."

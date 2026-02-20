@@ -17,6 +17,8 @@
 ---
 
 ## 1. Executive Summary
+
+**The SHEIKH Doctrine:** A sovereign, high-performance, ethically aligned, retrieval-grounded hybrid AGI architecture that integrates structured reasoning with algorithmic search. It is not just a chatbot, but a reasoning system with memory, structure, and sovereignty.
 **Full Sheikh AGI** is a high-performance reasoning framework. It leverages a tiered approach to intelligence, scaling from basic Chain-of-Thought to expert-level **Monte Carlo Tree Search (MCTS)**. By integrating the full spectrum of 50 reasoning levels, we achieve a model capable of autonomous self-correction and multi-modal synthesis.
 
 ---
