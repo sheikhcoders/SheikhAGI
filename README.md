@@ -32,6 +32,8 @@ The documentation, not the code, defines what a module does.
 8.  **[Skills Directory](.sheikh/skills/)**: Repository-wide capabilities (Semantic Search, Treeview).
 9.  **[Todo List](TODO.md)**: Active task tracking and technical debt.
 10. **[Agents Guide](AGENTS.md)**: Standard operating procedures (Documentation-as-Truth, Cognitive Funneling).
+11. **[Dataset Curation](Dataset_Curation.md)**: Data requirements and training phases.
+12. **[Conda Setup](Conda_Setup.md)**: Environment and package management.
 
 ---
 
@@ -46,12 +48,43 @@ The documentation, not the code, defines what a module does.
 ```
 .
 |____Logic_Synthesis.md
+|____.sheikh
+| |____subagents
+| | |____README.md
+| | |____coder.agent
+| | |____linguist.agent
+| | |____critic.agent
+| | |____researcher.agent
+| |____skills
+| | |____semantic_search.SKILL.md
+| | |____README.md
+| | |____treeview.SKILL.md
+| | |____ci_workflows
+| | | |____README.md
+| |____rules
+| | |____rules.jinja
+| |____plugins
+| | |____README.md
+| | |____sheikh-debugger
+| | | |____Rules.mdc
+| | | |____Skills.SKILL.md
+| | | |____TestUntilPass.SKILL.md
+| | |____sheikh-researcher
+| | | |____paper_fetcher.py
+| | | |____Rules.mdc
+| | | |____Skills.SKILL.md
+| |____plans
+| | |____full_sheikh_agi_architecture_plan.md
+| | |____dataset_and_env_plan.md
+|____Conda_Setup.md
 |____TODO.md
 |____README.md
 |____components
 | |____Button.tsx
+|____environment.yml
 |____AGI_Bangladesh_Blueprint.md
 |____AGENTS.md
+|____Dataset_Curation.md
 |____Formatting_Guidelines_Synthesis.md
 |____Implementation_Roadmap.md
 |____treeview.sh

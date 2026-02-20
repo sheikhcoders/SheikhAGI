@@ -8,12 +8,12 @@
 ## Table of Contents
 - [1. Executive Summary](#1-executive-summary)
 - [2. Architectural Distinction: Workflows vs. Agents](#2-architectural-distinction-workflows-vs-agents)
-- [3. Built-in Subagents](#3-built-in-subagents)
-- [3. Core Reasoning Logics](#3-core-reasoning-logics)
-- [4. The Reasoning Taxonomy (Levels 1–50)](#4-the-reasoning-taxonomy-levels-1-50)
-- [5. Interleaved Thinking Architecture](#5-interleaved-thinking-architecture)
-- [6. Technical Implementation](#6-technical-implementation)
-- [7. Resources & Further Reading](#7-resources--further-reading)
+- [3. Building Blocks: The Augmented LLM](#3-building-blocks-the-augmented-llm)
+- [4. ACI & Poka-yoke: Mistake-Proof Tooling](#4-aci--poka-yoke-mistake-proof-tooling)
+- [5. Dataset Curation & Training](#5-dataset-curation--training)
+- [6. Core Reasoning Logics](#6-core-reasoning-logics)
+- [7. The Reasoning Taxonomy (Levels 1–50)](#7-the-reasoning-taxonomy-levels-1-50)
+- [8. Interleaved Thinking Architecture](#8-interleaved-thinking-architecture)
 
 ---
 
@@ -21,64 +21,65 @@
 
 **The SHEIKH Doctrine:** A sovereign, high-performance, ethically aligned, retrieval-grounded hybrid AGI architecture that integrates structured reasoning with algorithmic search. It is not just a chatbot, but a reasoning system with memory, structure, and sovereignty.
 
-**Full Sheikh AGI** is a high-performance reasoning framework. It leverages a tiered approach to intelligence, scaling from basic Chain-of-Thought to expert-level **Monte Carlo Tree Search (MCTS)**.
-
 ---
 
 ## 2. Architectural Distinction: Workflows vs. Agents
 
-The **Full Sheikh AGI** project categorizes its operations into two distinct agentic systems:
+The **Full Sheikh AGI** project distinguishes between two types of agentic systems:
 
-1.  **Workflows**: Systems where LLMs and tools are orchestrated through **predefined code paths**. These are prescriptive, high-reliability implementations used for standardized tasks (e.g., initial data ingestion, formatting checks).
-2.  **Agents**: Systems where the LLM **dynamically directs its own processes** and tool usage. The model maintains control over how it accomplishes tasks, allowing it to handle complex, long-horizon, and non-linear problems.
-
-**Full Sheikh AGI** is designed to be a true **Agent**, capable of choosing between rigid workflows and dynamic reasoning based on task complexity.
+1.  **Workflows**: Systems where LLMs and tools are orchestrated through **predefined code paths**. These follow a *Call -> Gate (Pass/Fail) -> Next Call* logic, ensuring high reliability for prescriptive tasks.
+2.  **Agents**: Systems where the LLM **dynamically directs its own processes** and tool usage. The agent maintains an internal state and decides which tools to invoke based on intermediate observations.
 
 ---
 
-## 3. Core Reasoning Logics
+## 3. Building Blocks: The Augmented LLM
 
-### 3.1 Test-Time Compute (TTC) & Search
-We implement **Hybrid Search Reasoning** (Level 50), combining LLM intuition with formal search algorithms like MCTS. This allows for near-perfect accuracy on expert tasks in math and engineering.
+The foundational building block of the Full Sheikh AGI is the **Augmented LLM**. This is an LLM enhanced with:
+- **Retrieval**: Interleaved Semantic Search (IRCoT).
+- **Tools**: Program-Aided Language (PAL) and domain-specific APIs.
+- **Memory**: Context-aware retention for long-horizon task management.
 
-### 3.2 Deep Reinforcement Learning
-Using **Process Reward Modeling** (Level 42), we train a critic to score every individual step of the reasoning chain, ensuring the model's logic is "faithful" and verifiable.
-
----
-
-## 4. The Reasoning Taxonomy (Levels 1–50)
-The intelligence of Full Sheikh AGI is structured across four maturity phases:
-- **Beginner (1–10)**: Basic CoT, Role-Based Persona, and Scratchpads.
-- **Intermediate (11–25)**: **Self-Consistency**, **Reflexion**, and **Program-Aided Language (PAL)**.
-- **Advanced (26–40)**: **Tree of Thoughts (ToT)**, **Graph of Thoughts (GoT)**, and **IRCoT**.
-- **Expert (41–50)**: **MCTS**, **Process Reward Modeling**, and **Autonomous Reasoning Agents**.
+These components form a symbiotic feedback loop where the LLM generates queries, interprets tool responses, and updates its memory to reach a final output.
 
 ---
 
-## 5. Interleaved Thinking Architecture
-The model utilizes **IRCoT** (Level 26) to interleave retrieval with reasoning steps. This reduces response length by **37%** while maintaining factual groundedness.
+## 4. ACI & Poka-yoke: Mistake-Proof Tooling
+
+We prioritize **Agent-Computer Interface (ACI)** design over simple API exposedness.
+- **Poka-yoke**: Every tool is "mistake-proofed" (e.g., requiring absolute paths, eliminating complex escaping) to reduce cognitive overhead for the agent.
+- **Prompt-Engineered Tools**: Tool definitions are treated with the same rigor as system prompts, including clear docstrings, example usages, and edge-case handling.
 
 ---
 
-## 6. Technical Implementation
+## 5. Dataset Curation & Training
 
-```python
-import torch
-from transformers import AutoModelForCausalLM
-
-def initialize_reasoning_model(base_model_path):
-    """
-    Initializes Full Sheikh AGI with level 50 Hybrid Search capabilities.
-    """
-    model = AutoModelForCausalLM.from_pretrained(base_model_path)
-    # Enable Graph of Thoughts (GoT) and MCTS scaling
-    model.config.reasoning_level = 50
-    print("🚀 Sovereign Intelligence Active.")
-    return model
-```
+To achieve Level 50 reasoning, the framework follows a high-density data and training strategy:
+- **Data Curation**: Focusing on Long-CoT traces, math rigor, and Bengali alignment. (See [Dataset_Curation.md](Dataset_Curation.md)).
+- **Multi-Stage Training**: SFT -> Reasoning RL (GRPO) -> Distillation.
+- **Security**: Every release includes **SLSA3 Provenance** for weight integrity.
 
 ---
 
-## 7. Resources
-- [Full 50-Level Taxonomy](Reasoning_Taxonomy.md)
-- [DeepSeek-R1 Technical Report](https://github.com/deepseek-ai/DeepSeek-R1)
+## 6. Core Reasoning Logics
+
+### 6.1 Test-Time Compute (TTC) & Search
+We implement **Hybrid Search Reasoning** (Level 50), combining LLM intuition with formal search algorithms like MCTS.
+
+### 6.2 Deep Reinforcement Learning
+Using **Process Reward Modeling** (Level 42), we train a critic to score every individual step of the reasoning chain.
+
+---
+
+## 7. The Reasoning Taxonomy (Levels 1–50)
+- **Beginner (1–10)**: Basic CoT, Role-Based Persona.
+- **Intermediate (11–25)**: **Self-Consistency**, **Reflexion**, and **PAL**.
+- **Advanced (26–40)**: **ToT**, **GoT**, and **IRCoT**.
+- **Expert (41–50)**: **MCTS**, **PRM**, and **Autonomous Agents**.
+
+---
+
+## 8. Interleaved Thinking Architecture
+The model utilizes **IRCoT** (Level 26) to interleave retrieval with reasoning steps, reducing response length by **37%**.
+
+---
+*Built with passion by the Full Sheikh AGI Architects.*

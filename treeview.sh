@@ -9,9 +9,9 @@ if [[ ! -f "$README_PATH" ]]; then
 else
     # Generate Tree View
     if [[ "$MAX_DEPTH" == "-1" ]]; then
-        TREE_CONTENT=$(find "$ROOT_DIR" -not -path '*/.*' -not -path '*node_modules*' -not -path '*dist*' -not -path '*build*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g')
+        TREE_CONTENT=$(find "$ROOT_DIR" -not -path '*/.git*' -not -path '*node_modules*' -not -path '*dist*' -not -path '*build*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g')
     else
-        TREE_CONTENT=$(find "$ROOT_DIR" -maxdepth "$MAX_DEPTH" -not -path '*/.*' -not -path '*node_modules*' -not -path '*dist*' -not -path '*build*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g')
+        TREE_CONTENT=$(find "$ROOT_DIR" -maxdepth "$MAX_DEPTH" -not -path '*/.git*' -not -path '*node_modules*' -not -path '*dist*' -not -path '*build*' -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g')
     fi
 
     # Escape newlines for sed

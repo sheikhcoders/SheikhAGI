@@ -42,3 +42,4 @@ To maintain the high standards of the **Full Sheikh AGI** project, all developer
 - **Plan First**: Before any major code change, an implementation plan must be drafted and stored in `.sheikh/plans/`.
 - **Review & Reflect**: Use the stored plans to reflect on progress and adjust the roadmap dynamically.
 - **Traceability**: Every major milestone should have a corresponding plan that documents the "Why" and "How" of the architectural decisions.
+- **Security Provenance**: Every release must include **SLSA3 Provenance** to ensure the integrity of the sovereign AGI weights.
