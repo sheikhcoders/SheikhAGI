@@ -19,7 +19,7 @@
 ---
 
 ## 1. Executive Summary
-This document outlines the architectural framework for **Amar Sonar AGI**, a high-performance reasoning model tailored for complex problem-solving in mathematics, coding, and scientific research. By integrating **Test-Time Compute (TTC)**, **DeepSeek-style Reinforcement Learning**, and **Interleaved Agentic Workflows**, we propose a model that transcends traditional transformer limitations.
+This document outlines the architectural framework for **Amar Sonar AGI**, a high-performance reasoning model. By integrating **Test-Time Compute (TTC)**, **DeepSeek-style Reinforcement Learning**, and **Interleaved Agentic Workflows**, we propose a model that transcends traditional transformer limitations. Recent benchmarks show that **Interleaved Reasoning** can reduce response length by up to **37%** while maintaining superior accuracy.
 
 ---
 
@@ -29,11 +29,11 @@ This document outlines the architectural framework for **Amar Sonar AGI**, a hig
 Scaling intelligence is no longer just about parameter count; it is about **inference-time compute**. Amar Sonar AGI utilizes dynamic compute allocation:
 
 1.  **Search-based Refinement:**
-    - Uses Best-of-N sampling.
-    - Employs a dedicated **Process Reward Model (PRM)**.
+    - **Monte Carlo Tree Search (MCTS)** for exploring complex reasoning paths.
+    - **Best-of-N sampling** with self-verification.
 2.  **Adaptive Depth:**
     - The model decides how many "thought tokens" to generate.
-    - Complexity-aware routing logic.
+    - Smaller models using optimized TTC can often outperform much larger models that respond instantly.
 
 ### 2.2 Deep Reinforcement Learning (GRPO)
 Following the [DeepSeek-R1][deepseek_link] methodology, we employ **Group Relative Policy Optimization (GRPO)**.
@@ -41,31 +41,25 @@ Following the [DeepSeek-R1][deepseek_link] methodology, we employ **Group Relati
 #### The Reward Function
 $$\mathcal{R} = \lambda_1 R_{accuracy} + \lambda_2 R_{format} + \lambda_3 R_{consistency}$$
 
-Where:
-*   $R_{accuracy}$: Binary reward for correct final answer.
-*   $R_{format}$: Reward for adhering to the `<think>...</think>` structure.
-
 ---
 
 ## 3. Interleaved Thinking Architecture
-The model implements a **Plan $\rightarrow$ Act $\rightarrow$ Reflect** loop, allowing it to function as an autonomous agent.
+The model implements a **Plan $\rightarrow$ Act $\rightarrow$ Reflect** loop, coordinated via **Uni-CoT** or **IRCoT** (Interleaved Retrieval Chain-of-Thought).
 
-### The Interleaved Workflow
-- **Plan**: Decompose the goal into sub-tasks.
-- **Act**: Execute code or search for information.
-- **Reflect**: Evaluate the outcome against the original plan.
+### The Dynamic Flow
+- **Plan**: Decompose goals into manageable sub-tasks.
+- **Act**: Interleave text reasoning with tool use, retrieval, or visual "thoughts" (e.g., crops/sketches in Zebra-CoT).
+- **Reflect**: Reduce errors in logic and arithmetic by "thinking out loud."
 
-| Stage | Action | Output |
+| Stage | Action | Logic Paradigm |
 | :--- | :--- | :--- |
-| **I** | Deconstruct | Sub-goal Tree |
-| **II** | Execute | Raw Observation |
-| **III** | Critique | Error Log / Success Metric |
+| **I** | Deconstruct | Chain-of-Thought (CoT) |
+| **II** | Execute | Interleaved Retrieval (IRCoT) |
+| **III** | Critique | Self-Verification / MCTS |
 
 ---
 
 ## 4. Technical Implementation
-
-The following snippet demonstrates the GRPO-based reasoning loop initialization:
 
 ```python
 import torch
@@ -73,16 +67,15 @@ from transformers import AutoModelForCausalLM
 
 def initialize_reasoning_model(base_model_path):
     """
-    Initializes Amar Sonar AGI with GRPO reasoning capabilities.
+    Initializes Amar Sonar AGI with TTC and Interleaved Thinking.
     """
     model = AutoModelForCausalLM.from_pretrained(
         base_model_path,
-        trust_remote_code=True,
         torch_dtype=torch.bfloat16
     )
-    # Configure Interleaved Thinking Loops
-    model.config.max_thought_tokens = 4096
-    print("🚀 Amar Sonar AGI Initialized Successfully!")
+    # Enable Interleaved Thinking Loops (Plan -> Act -> Reflect)
+    model.config.interleaved_ops = ["reason", "retrieve", "act"]
+    print("🚀 Amar Sonar AGI: Sovereign Intelligence Online.")
     return model
 ```
 
@@ -90,36 +83,28 @@ def initialize_reasoning_model(base_model_path):
 
 ## 5. Architectural Diagram
 
-![AGI Architecture Flow](https://raw.githubusercontent.com/merriam/marvin/main/assets/architecture_placeholder.png "Architectural Flow of Amar Sonar AGI")
-
-*Figure 1: High-level visualization of the TTC and RL feedback loops.*
+![AGI Architecture Flow](https://raw.githubusercontent.com/merriam/marvin/main/assets/architecture_placeholder.png "Architectural Flow")
 
 ---
 
 ## 6. Resources & Further Reading
 
-For more details on the underlying technologies, refer to the following:
 *   [DeepSeek-R1 Technical Report][deepseek_link]
-*   [Scaling Test-time Compute (arXiv)][ttc_link]
-*   [Agentic Workflows by Andrew Ng][agent_link]
+*   [Uni-CoT: Unified Chain-of-Thought Reasoning][ttc_link]
+*   [Interleaved Thinking in Vision (Zebra-CoT)][agent_link]
 
-### 📺 Video Tutorial: Understanding CoT
+### 📺 Understanding Slow Reasoning
 <div align="center">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ---
 
-## 7. Bangladesh Context & Local Deployment
-The model is optimized for:
-*   **Low-resource Fine-tuning**: Can be trained on 8x H100 clusters.
-*   **Bengali Language Nuance**: Deeply integrated dataset for local legal and technical documentation.
+## 7. Bangladesh Context
+Optimized for sovereign deployment on local clusters, ensuring data privacy and linguistic precision in Bengali technical domains.
 
 ---
 
-### Footnotes & References
-[^1]: Based on the latest trending papers on [Hugging Face](https://huggingface.co/papers).
-
-[deepseek_link]: https://github.com/deepseek-ai/DeepSeek-R1 "DeepSeek-R1 Repository"
-[ttc_link]: https://arxiv.org/abs/2408.03314 "Inference Time Compute Scaling"
-[agent_link]: https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance/ "Andrew Ng on Agents"
+[deepseek_link]: https://github.com/deepseek-ai/DeepSeek-R1
+[ttc_link]: https://arxiv.org/abs/2408.03314
+[agent_link]: https://arxiv.org/abs/2407.03604
