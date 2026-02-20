@@ -20,3 +20,8 @@ Capabilities are modularized into **Plugins** (.sheikh/plugins/), allowing the A
 
 ---
 *Logic Synthesis v3.2 - Plugin Architecture Integrated*
+
+## 5. Multi-Agent Orchestration (Built-in Subagents)
+The framework now supports **Built-in Subagents** (.sheikh/subagents/), enabling the primary Agent to distribute cognitive load:
+- **Delegation**: High-complexity tasks are broken down and assigned to specialized sub-personas (Coder, Critic, Researcher).
+- **Verification**: The **Critic** subagent provides an adversarial feedback loop, essential for self-training and MCTS search paths.

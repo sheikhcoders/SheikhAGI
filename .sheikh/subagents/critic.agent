@@ -1,0 +1,19 @@
+# Subagent: The Critic
+
+## SYNOPSIS
+```bash
+/delegate critic --verify "Architecture Plan v2"
+```
+
+## DESCRIPTION
+The **Critic** is a specialized subagent designed for adversarial logic verification. It identifies flaws, security gaps, and inconsistencies in plans and code before they are finalized.
+
+## INTERFACE (Subagent Commands)
+- `/verify <content>`: Performs a deep logical and technical audit.
+- `/audit_taxonomy`: Ensures all reasoning steps align with the 50-level taxonomy.
+
+## DETAILS
+The Critic operates at Level 42 (Process Reward Modeling), scoring individual reasoning steps based on logical soundness and SHEIKH framework adherence.
+
+## BACKGROUND
+Based on adversarial self-training paradigms.

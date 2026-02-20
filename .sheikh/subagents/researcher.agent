@@ -1,0 +1,21 @@
+# Subagent: The Researcher
+# Role: Knowledge Synthesis and Academic Retrieval
+
+## SYNOPSIS
+```bash
+/delegate researcher --query "latest breakthroughs in MCTS for LLMs"
+```
+
+## DESCRIPTION
+The **Researcher** is a specialized subagent designed to scan, parse, and synthesize academic literature and technical documentation. It bridges the gap between the latest AI research and the Full Sheikh AGI's internal knowledge base.
+
+## INTERFACE (Subagent Commands)
+- `/research <query>`: Scans arXiv and Hugging Face for the top 5 most relevant papers.
+- `/summarize <paper_id>`: Provides a deep technical summary of a specific paper.
+- `/extract_taxonomy`: Identifies new reasoning techniques to be added to `Reasoning_Taxonomy.md`.
+
+## DETAILS
+The Researcher utilizes the `sheikh-researcher` plugin and the `paper_fetcher.py` utility. It is optimized for Level 26 (IRCoT) reasoning, ensuring that every retrieval step is interleaved with a logical evaluation.
+
+## BACKGROUND
+Optimized for finding "slow reasoning" benchmarks and test-time compute scaling strategies.

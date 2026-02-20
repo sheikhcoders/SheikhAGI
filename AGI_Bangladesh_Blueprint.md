@@ -8,6 +8,7 @@
 ## Table of Contents
 - [1. Executive Summary](#1-executive-summary)
 - [2. Architectural Distinction: Workflows vs. Agents](#2-architectural-distinction-workflows-vs-agents)
+- [3. Built-in Subagents](#3-built-in-subagents)
 - [3. Core Reasoning Logics](#3-core-reasoning-logics)
 - [4. The Reasoning Taxonomy (Levels 1–50)](#4-the-reasoning-taxonomy-levels-1-50)
 - [5. Interleaved Thinking Architecture](#5-interleaved-thinking-architecture)
